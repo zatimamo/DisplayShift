@@ -1,13 +1,22 @@
-# Support
+# DisplayShift support
 
-Before opening an issue, check the README and INSTALLATION_GUIDE.md.
+Need help setting up DisplayShift or troubleshooting a display issue? Start with the [installation guide](INSTALLATION_GUIDE.md) and the [README troubleshooting section](README.md#troubleshooting-and-support).
 
-For a useful compatibility or bug report, include:
-- DisplayShift version and Windows edition
-- Installer or Portable edition
-- Monitor model and HDMI/DisplayPort arrangement
-- What you expected, what happened, and steps to reproduce it
+## Report an issue
 
-Please redact account names, personal windows, private paths and sensitive information from screenshots or logs.
+Use the repository's [Issues page](https://github.com/zatimamo/DisplayShift/issues) to report bugs or describe compatibility problems.
 
-Input switching requires monitor-specific DDC/CI support. A successful DDC write does not guarantee a completed physical input switch.
+To help investigate, include:
+
+- Your DisplayShift version and Windows version.
+- Whether you're using the installer or portable edition.
+- Your monitor model and which video inputs are connected.
+- What you expected to happen, what actually happened, and how to reproduce it.
+
+Screenshots can help, but please remove any personal information, private windows, account names, or sensitive paths before uploading them.
+
+## Compatibility reminder
+
+DisplayShift depends on your monitor's DDC/CI implementation. Not every monitor supports input switching, and a successful command does not always mean the display has changed inputs.
+
+For security vulnerabilities, follow the [security policy](SECURITY.md) rather than posting sensitive details in a public issue.
