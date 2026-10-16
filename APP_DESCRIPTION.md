@@ -1,34 +1,33 @@
-# DisplayShift Official V1.0.2
-**Publisher: Zatima** | **Made with love ♥**
+# About DisplayShift
 
-## Short app description
-DisplayShift is a lightweight Windows monitor-input controller that makes it easier to switch between compatible HDMI and DisplayPort connections. It also lets you preview and interact with another Windows desktop without using the monitor's physical input button.
+**DisplayShift** is a Windows utility that helps you switch between compatible monitor video inputs and preview another Windows desktop from one interface.
 
-## Detailed description
-Designed for Windows setups with multiple GPU outputs connected to one monitor, DisplayShift uses DDC/CI commands to request an input change. Its clean dashboard features named display cards, clear input status indicators, keyboard shortcuts and an optional preview of a different Windows desktop.
+Created for multi-GPU and multi-input setups, it uses DDC/CI commands to request input changes without opening the monitor's built-in menu.
 
-Use the small 1 FPS thumbnail to see the other desktop, expand it for interactive mouse/keyboard control, or use Gaming Mode for a simpler, reduced-activity interface.
+## Highlights
 
-## Main features
-- Switch supported monitor inputs using DDC/CI VCP 0x60
-- Page Up / Bild ↑ global switching hotkey
-- Renameable input cards and active/pending/error status
-- 1 FPS second-screen thumbnail
-- Interactive expanded desktop preview and window-moving controls
-- Gaming Mode with simpler controls
-- English, French, German, Simplified Chinese and Arabic (RTL) user interface
-- Teal dual-arrow icon and two-line publisher credit
+- Switch between compatible HDMI and DisplayPort monitor inputs.
+- Use the **Page Up (Bild ↑)** shortcut for quick switching.
+- Identify inputs with customizable names and clear status indicators.
+- View a lightweight 1 FPS thumbnail of your second desktop.
+- Open an expanded preview with optional mouse and keyboard control.
+- Use Gaming Mode for a simpler interface and reduced background activity.
+- Choose from English, French, German, Simplified Chinese, and Arabic.
 
 ## Compatibility
-Tested around a Samsung Odyssey G7 with an HDMI GPU output and a separate DisplayPort GPU output. Compatibility is monitor- and connection-dependent: not all monitors support the required DDC/CI commands. A successful DDC write does not always prove that the picture switched. Windows must detect both outputs for preview to work.
 
-Windows 11 x64 has been tested. Other Windows 10/11 x64 environments are not comprehensively validated.
+DisplayShift was tested on **Windows 11 (64-bit)** with a Samsung Odyssey G7 connected to an RTX 4070 Ti SUPER over HDMI and an RTX 4070 over DisplayPort.
 
-## Language
-Installer: English on the first launch after installing or upgrading. Later preferences are remembered.
-Portable: English on a fresh profile; existing profiles retain their saved language.
+The switching function requires a monitor that supports the relevant DDC/CI commands. Other hardware configurations may behave differently. Desktop preview requires Windows to detect both connected video outputs.
 
-## Distribution
-DisplayShift's own application code is proprietary and closed-source. The public packages contain compiled binaries rather than editable source. Bundled third-party components, including Qt/PySide6, retain their separate licenses and user rights.
+## Availability
 
-Copyright © 2026 Zatima. All rights reserved.
+Download the [Windows installer or portable edition](https://github.com/zatimamo/DisplayShift/releases/tag/v1.0.2).
+
+**Version:** v1.0.2  
+**Publisher:** Zatima  
+**License:** Proprietary, closed-source
+
+The application is distributed as compiled software. Third-party components retain their own license terms.
+
+© 2026 Zatima.
