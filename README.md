@@ -1,86 +1,99 @@
-# DisplayShift · Official V1.0.2
+# DisplayShift
 
-![DisplayShift v1.0.2 dashboard](assets/DisplayShift_Main_UI.png)
+**Switch between supported monitor inputs directly from Windows.**
 
-*Actual v1.0.2 application screenshot captured on Windows 11.*
+DisplayShift is a Windows utility for setups where multiple video outputs connect to the same monitor. Switch between compatible HDMI and DisplayPort inputs, preview another Windows desktop, and access everyday controls in one straightforward interface.
 
-![Monitor input controls](assets/DisplayShift_Input_Controls.png)
+**Latest version:** v1.0.2 · **Publisher:** Zatima · **Platform:** Windows 11 (64-bit) tested · **License:** Proprietary
 
-**[Download DisplayShift v1.0.2](https://github.com/zatimamo/DisplayShift/releases/tag/v1.0.2)** (link becomes active when published).
+![DisplayShift v1.0.2 main window](assets/DisplayShift_Main_UI.png)
 
-**DisplayShift** is a lightweight Windows utility for switching a monitor between two GPU video inputs over DDC/CI. It also provides a small, low-FPS preview of the second Windows desktop and a compact Gaming Mode.
+## Download
 
-**Publisher:** Zatima  
-**Credit:** Made with love ♥ · Publisher: Zatima  
-**Version:** Official V1.0.2 (1.0.2)  
-**Platforms:** Windows 11 x64 (tested), other Windows 10/11 x64 configurations are not fully validated.
+Get the latest version from the **[DisplayShift v1.0.2 release page](https://github.com/zatimamo/DisplayShift/releases/tag/v1.0.2)**.
 
-## Download and run
+| Version | Download | Details |
+| --- | --- | --- |
+| **Installer** | [Download for Windows (.exe)](https://github.com/zatimamo/DisplayShift/releases/download/v1.0.2/DisplayShift_V1.0.2_Setup.exe) | Guided installation, Start menu shortcut, optional desktop shortcut, and uninstaller |
+| **Portable** | [Download portable (.zip)](https://github.com/zatimamo/DisplayShift/releases/download/v1.0.2/DisplayShift_V1.0.2_Portable.zip) | Extract and run without installing |
 
-The two official release files are:
+Both editions include the application and required runtime files. A separate Python installation is not needed.
 
-| File | Usage |
-| --- | --- |
-| `DisplayShift_V1.0.2_Setup.exe` | Guided installation, Start-menu entry, optional Desktop shortcut, and uninstaller |
-| `DisplayShift_V1.0.2_Portable.zip` | Extract the entire `DisplayShift_Portable` folder and run `DisplayShift.exe`. No installer needed |
-
-The portable and installed editions use `%LOCALAPPDATA%\DisplayShift\settings.json` for user preferences. They share settings when run under the same Windows user account.
+You can check download integrity with [SHA-256 checksums](SHA256SUMS.txt).
 
 ## Features
 
-- DDC/CI VCP input switching, where supported by the monitor.
-- Global **Page Up / Bild ↑** shortcut for switching inputs without another confirmation.
-- Individually named input cards and current input indicators: **green** means detected or visually confirmed; **amber** means a switch was requested; **red** means unavailable or failed; **gray** means inactive/unknown.
-- Small sidebar thumbnail preview at **1 FPS**.
-- Expanded interactive desktop preview with optional mouse and keyboard relay.
-- Gaming Mode with just a 1 FPS preview, display buttons, and Page Up option; regular polling and the normal preview are suspended while active.
-- English, French, German, Simplified Chinese and Arabic (right-to-left interface).
-- Teal dual-arrow icon and fully visible, two-line publisher footer.
+- **Monitor input switching:** Select compatible HDMI or DisplayPort inputs through DDC/CI.
+- **Keyboard shortcut:** Use **Page Up (Bild ↑)** to switch inputs quickly.
+- **Clear display status:** See which input is active, pending, unavailable, or not yet confirmed.
+- **Second-desktop preview:** Keep an eye on another Windows desktop with a lightweight 1 FPS thumbnail.
+- **Interactive preview:** Open a larger view and optionally control the other desktop with mouse and keyboard.
+- **Gaming Mode:** A simpler layout designed to keep background preview and polling activity low.
+- **Multiple languages:** English, French, German, Simplified Chinese, and Arabic (right-to-left).
 
-## Important hardware compatibility note
+### Input controls
 
-The current input-switching profile was developed and tested on a **Samsung Odyssey G7** with two active Windows outputs: HDMI on an NVIDIA GeForce RTX 4070 Ti SUPER and DisplayPort on a separate NVIDIA GeForce RTX 4070.
+![DisplayShift input selection cards](assets/DisplayShift_Input_Controls.png)
 
-This is **not a universal monitor-control solution**. Input switching depends on physical connection enumeration, the monitor's DDC/CI capability, VCP feature 0x60 and the configured input codes. Preview of a Windows desktop also requires it to remain enumerated by Windows. Other hardware may require source changes and separate validation.
+## Getting started
 
-The application never promises a completed physical input switch solely from a successful DDC write: confirm the visible picture when needed. Keep your monitor's physical input selector available.
+**Installer**
 
-## Security and privacy
+1. Download and run `DisplayShift_V1.0.2_Setup.exe`.
+2. Follow the setup wizard.
+3. Launch DisplayShift from the Start menu or desktop shortcut.
 
-The distributed executable contains native-compiled application components and runtime dependencies; no editable Python source is distributed with public releases. This discourages casual modification, but **no offline application is tamper-proof**.
+**Portable**
 
-DisplayShift uses local Windows APIs and does not require a cloud service for switching or local preview. The app is **not digitally signed** with a trusted Authenticode certificate. Windows may show a publisher warning on first installation; this is separate from the text publisher metadata **Zatima**.
+1. Download `DisplayShift_V1.0.2_Portable.zip`.
+2. Extract the entire archive.
+3. Open the `DisplayShift_Portable` folder and run `DisplayShift.exe`. Keep the accompanying `_internal` folder in place.
 
-## Troubleshooting
+See the [installation guide](INSTALLATION_GUIDE.md) for configuration and troubleshooting.
 
-**Preview shows the wrong screen:** Check that Windows still detects both video outputs and that the monitor connections match the expected hardware profile.
+## Compatibility
 
-**Page Up does nothing:** Another program may already own the hotkey. Check the Page Up status in DisplayShift and close the conflicting application.
+DisplayShift relies on **DDC/CI input switching (VCP code 0x60)**. Support varies by monitor, firmware, connection, and input configuration. A monitor may acknowledge a command without completing the physical input switch.
 
-**The screen switched, but the card is amber:** The monitor returned an ambiguous readback. Confirm the actual physical picture before marking the mapping verified.
+The current version was tested on **Windows 11 (64-bit)** with a **Samsung Odyssey G7** connected to two GPU outputs:
 
-**The publisher text appears covered:** This was corrected in Official V1 by placing the status card and two-line publisher credit in an independent footer; the navigation area now scrolls separately.
+- **HDMI:** NVIDIA GeForce RTX 4070 Ti SUPER
+- **DisplayPort:** NVIDIA GeForce RTX 4070
 
-## Closed-source licensing
+Other Windows 10/11 (64-bit) systems and monitor combinations have not been fully validated. For desktop preview to work, Windows must continue to detect both video outputs. Keep the monitor's physical input controls available if you need to switch back manually.
 
-These GitHub-ready materials are intended for **binary releases**. The editable developer source is stored separately and should **not** be added to a public repository if source protection is desired.
+## What's new in v1.0.2?
 
-DisplayShift application code is proprietary, closed source, and not released under an open-source license. See LICENSE and THIRD_PARTY_NOTICES.txt. Third-party licenses and statutory user rights continue to apply.
+This update improves how DisplayShift handles language preferences after installation or upgrades:
 
-© 2026 Zatima. All rights reserved unless otherwise licensed by the rights holder.
+- The installer starts in English once after setup, including when upgrading from a saved Arabic-language configuration.
+- Your selected language is remembered on later launches.
+- Existing display names and input mappings are preserved.
+- The portable version keeps previously saved language preferences.
 
-## V1.0.1 startup fix
+Read the [release notes](RELEASE_NOTES.md) or [changelog](CHANGELOG.md).
 
-Fixed the startup exception affecting saved Arabic language. Qt layout change events previously called App.changeEvent before gaming_mode existed. Early initialization and a guarded callback now avoid this crash.
+## Troubleshooting and support
 
-The compiled EXE passed clean starts in all five languages. Both installer and portable builds passed isolated launch tests with Arabic saved.
+| Issue | What to check |
+| --- | --- |
+| **Page Up does not respond** | Another program may be using the shortcut. Check its status in DisplayShift. |
+| **Input status stays amber** | Check the monitor's actual picture. Input readback can be ambiguous. |
+| **Second-desktop preview is unavailable** | Make sure Windows still detects both video outputs. |
+| **Your monitor does not switch** | Confirm DDC/CI is supported and enabled, and that its input codes match your setup. |
 
-## V1.0.2 language behavior
+For additional help or to report a problem, see [Support](SUPPORT.md).
 
-The Windows Setup installer selects English on the first start after installation, even if an older installation previously saved Arabic. It preserves display names, DDC input mappings, and other configuration. Later language preferences remain saved.
+## Privacy and licensing
 
-The portable edition does not reset saved language settings. Fresh users default to English automatically.
+DisplayShift uses local Windows APIs for monitor switching and desktop preview. These functions do not require an online account or cloud service. Preferences are stored locally in `%LOCALAPPDATA%\DisplayShift\settings.json`.
 
-## Proprietary distribution
+**DisplayShift is closed-source software.** The repository contains public documentation, screenshots, and links to compiled downloads. It does **not** contain the application's private source code. GitHub's automatically generated source archives include only the public repository files.
 
-Only compiled binary downloads are public. The source code remains private and is not included in this GitHub repository. Third-party packages such as PySide6/Qt have their own license requirements.
+The app is not digitally signed with a trusted Windows code-signing certificate, so Windows may display an unknown-publisher warning.
+
+See the [proprietary license](LICENSE), [third-party notices](THIRD_PARTY_NOTICES.txt), and [security information](SECURITY.md). Licenses for bundled components, including Qt/PySide6, continue to apply.
+
+**Made with love ♥ · Zatima**
+
+© 2026 Zatima. All rights reserved, subject to applicable third-party license terms.
