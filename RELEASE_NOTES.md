@@ -1,15 +1,31 @@
-# DisplayShift Official V1.0.2
+# DisplayShift v1.0.2
 
-Publisher: Zatima | Tag: v1.0.2 | Application license: Proprietary (closed source)
+**Official Windows release · Zatima**
 
-Updates:
-- Setup installer defaults to English on the next app launch, including upgrades from Arabic.
-- The English reset is one-time. Later language selections persist.
-- Display mappings, names, and hotkeys remain unchanged.
-- Portable builds keep previously saved language settings.
-- Public binaries have no editable Python source code.
-- Proprietary and third-party licensing notices are included.
+Version 1.0.2 improves first-launch language handling while preserving existing display settings.
 
-Preserved: DDC/CI input switching, Page Up, interactive preview, 1 FPS thumbnail, Gaming Mode, five languages including Arabic RTL, the teal icon, and the publisher footer.
+## What's changed
 
-Tests: Isolated installation with saved Arabic resets to English; French selected afterward remains selected on restart; portable runs with existing Arabic; installer uninstall passes. Physical DDC switch commands were not issued in release tests.
+- After installing or upgrading, DisplayShift opens in English on its first launch.
+- This includes systems that previously saved Arabic as the interface language.
+- Language choices made afterward are remembered.
+- Display names, input mappings, and shortcuts remain unchanged.
+- The portable edition continues to use the saved language setting.
+
+## Included features
+
+DDC/CI monitor input switching, the Page Up shortcut, second-desktop thumbnail and interactive preview, Gaming Mode, and five interface languages remain available.
+
+## Download
+
+- [Windows installer](https://github.com/zatimamo/DisplayShift/releases/download/v1.0.2/DisplayShift_V1.0.2_Setup.exe)
+- [Portable ZIP](https://github.com/zatimamo/DisplayShift/releases/download/v1.0.2/DisplayShift_V1.0.2_Portable.zip)
+- [File checksums](SHA256SUMS.txt)
+
+## Compatibility and release testing
+
+Windows 11 (64-bit) was tested on a Samsung Odyssey G7 dual-GPU setup. Compatibility with other monitors depends on DDC/CI support.
+
+Release checks covered installation, uninstalling, startup with saved Arabic settings, language persistence, and portable launch. Physical monitor input switching was not exercised during those release-specific checks.
+
+DisplayShift is proprietary, closed-source software. The distributed executables are not signed with a trusted Authenticode certificate. Third-party licenses continue to apply.
