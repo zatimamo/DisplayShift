@@ -1,0 +1,51 @@
+# Public repository: documentation and approved images only. Binaries belong to Releases.
+/Release/
+*.exe
+*.zip
+*.7z
+*.msi
+*.dll
+*.pyd
+*.pyc
+*.pyo
+*.pdb
+
+# Private source code, builds, scripts and backups
+*.py
+*.pyw
+*.c
+*.cpp
+*.h
+*.hpp
+*.spec
+*.iss
+*.ps1
+*.cmd
+*.bat
+*.log
+*.bak
+__pycache__/
+CythonBuild/
+ProtectedApp/
+ProtectedRelease/
+PyInstallerBuild/
+03_Development/
+04_Private_Backups/
+05_Archive/
+
+# Internal publishing guidance and local paths
+GITHUB_PUBLISHING.md
+GITHUB_RELEASE_TEXT.md
+RELEASE_TAG.txt
+MOVE_MANIFEST.json
+
+# Private configuration and credentials
+settings.json
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+assets/*_candidate.png
+/Public_Repository/

@@ -1,0 +1,37 @@
+DisplayShift - Third-party software notices (V1.0.2)
+
+DisplayShift's own application implementation is proprietary.
+This does not change the licenses of the third-party runtime dependencies.
+
+PySide6 / PySide6-Essentials / PySide6-Addons / shiboken6: 6.10.2
+  Copyright their respective owners, including The Qt Company.
+  Installed package metadata: LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only.
+  For the redistribution of the prebuilt Qt libraries, the LGPL-3.0-only
+  alternative is intended. See https://www.gnu.org/licenses/lgpl-3.0.html
+  and https://doc.qt.io/qtforpython-6/licenses.html .
+  The LGPL gives users rights for those libraries that are not restricted by
+  DisplayShift's proprietary app license, including relevant rights to debug
+  modifications and replace compatible LGPL libraries. The one-folder
+  distribution retains dynamic library files separately.
+
+mss: 10.1.0
+  MIT License. See https://github.com/BoboTiG/python-mss and LICENSE.
+  Copyright and permission notices for this package must be retained.
+
+Pillow: 12.3.0
+  License terms available at https://python-pillow.github.io/pillow-handbook/
+  and upstream distribution. Pillow and associated native dependencies
+  retain their own respective terms.
+
+PyInstaller: 6.22.3
+  Licensed GPL-2.0-or-later with a special exception for distributing
+  applications built using PyInstaller, including proprietary applications.
+  See https://pyinstaller.org/en/stable/license.html .
+
+Microsoft Visual C++ runtime and other Windows components remain subject
+to their own redistribution terms.
+
+This notice is informational and not a comprehensive legal compliance
+opinion. Before publishing the installer widely, check that all required
+third-party copyright/license texts, LGPL library replacement conditions,
+and redistributable license obligations have been satisfied.
